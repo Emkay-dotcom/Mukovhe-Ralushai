@@ -1,1 +1,2 @@
 # Mukovhe-Ralushai
+The following file that I have or sent is design.html which was the file whereby it carried the website for gbv for people to get help,another is describing the world problem whereby we had to state the world problem then give out 5 skills that i have in mind to help with the world problem, another file is where we had to state the best programming languages , then the last one it was where we had to talk about our journey throughout the competition and the difficulties i faced andskills that i have developed 
