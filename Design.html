@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design — One Page Website</title>
+  <style>
+    :root{
+      --turquoise: #40E0D0;
+      --electric-blue: #0077FF;
+      --lava-red: #FF4500;
+      --terracotta: #E2725B;
+      --golden-brown: #B8860B;
+      --teal: #008080;
+      --mint: #98FF98;
+      --lavender: #C8A2C8;
+      --bg: linear-gradient(135deg, rgba(64,224,208,0.08), rgba(0,119,255,0.03));
+      --max-width: 1100px;
+      --radius: 14px;
+      --gap: 28px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#222;background:var(--bg);scroll-behavior:smooth}
+    header{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:40;width:calc(100% - 40px);max-width:var(--max-width);display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--electric-blue),var(--turquoise));box-shadow:0 6px 18px rgba(0,119,255,0.18)}
+    nav a{color:#0b0b0b;text-decoration:none;margin:0 10px;font-weight:600}
+    nav a:hover{opacity:0.85}
+
+    main{margin-top:86px}
+    section{min-height:100vh;padding:80px 20px;display:flex;align-items:center}
+    .container{max-width:var(--max-width);margin:0 auto;width:100%}
+
+    /* Hero */
+    .hero{gap:40px}
+    .hero-grid{display:grid;grid-template-columns:1fr 480px;gap:36px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));padding:28px;border-radius:var(--radius);box-shadow:0 12px 40px rgba(2,6,23,0.06)}
+
+    h1{font-size:48px;line-height:1.02;margin:0 0 12px}
+    p.lead{margin:0 0 18px;font-size:18px;color:#333}
+    .cta{display:inline-block;padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,var(--electric-blue),var(--turquoise));color:white;font-weight:700;text-decoration:none}
+
+    /* Sections look */
+    .section-title{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--lavender),var(--mint));font-weight:700}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.55));border:1px solid rgba(10,10,10,0.02)}
+    .service h3{margin:0 0 10px}
+
+    /* Accordion-like subsections (but simply visible blocks) */
+    .sub-section{margin-top:12px;padding:14px;border-radius:10px;background:rgba(250,250,250,0.7)}
+
+    /* Contact embed */
+    .contact-frame{width:100%;height:640px;border-radius:12px;border:0;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+
+    footer{padding:28px 20px;background:transparent;text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr;}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      h1{font-size:34px}
+      header{padding:8px}
+      .contact-frame{height:520px}
+      .services-grid{grid-template-columns:1fr}
+    }
+
+    /* Small page nav indicator */
+    .scroll-indicator{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--electric-blue),var(--lava-red));box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark" aria-hidden></div>
+      <div>
+        <div style="font-weight:800">By Mukovhe Ralushai</div>
+        <div style="font-size:12px;color:#333;margin-top:2px">GBV Prevention</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="card">
+            <div class="section-title">
+              <div class="pill">Welcome</div>
+              <div style="font-size:14px;color:#555">Speak Up, Stand Strong</div>
+            </div>
+            <h1 style="color:var(--electric-blue)">Care, Prevention & Support — One place for women</h1>
+            <p class="lead">We create accessible, modern services with warmth and clarity. Scroll down to learn about our policies, strategies and support programs.</p>
+            <a class="cta" href="#services">Explore Services</a>
+          </div>
+        </div>
+        <div>
+          <!-- Replace src with your image file(s) -->
+          <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:12px">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/023/original/WhatsApp_Image_2025-11-20_at_2.25.04_PM.jpeg?1763646493" alt="Hero picture" style="width:100%;height:320px;object-fit:cover;border-radius:10px;">
+            <div style="width:100%;display:flex;justify-content:space-between;gap:8px">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/024/original/WhatsApp_Image_2025-11-20_at_2.25.04_PM_%281%29.jpeg?1763646647" alt="Picture 1" style="height:150px;flex:1;object-fit:cover;border-radius:8px">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/025/original/WhatsApp_Image_2025-11-20_at_2.25.04_PM_%282%29.jpeg?1763646701" alt="Picture 2" style="height:150px;flex:1;object-fit:cover;border-radius:8px">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/027/original/WhatsApp_Image_2025-11-20_at_2.25.05_PM_%281%29.jpeg?1763646828" alt="Picture 3" style="height:150px;flex:1;object-fit:cover;border-radius:8px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="card">
+          <div class="section-title">
+            <div class="pill">About Us</div>
+            <div style="font-size:14px;color:#555">Who we are</div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <h2 style="color:var(--teal)">Our mission</h2>
+              <p>We provide compassionate support, evidence-based prevention programs, and clear policies to protect and empower women. Our approach combines warm community care with practical strategies.</p>
+              <p><strong>Values:</strong> dignity, safety, inclusion, and evidence.</p>
+            </div>
+            <div>
+              <h2 style="color:var(--terracotta)">Our story</h2>
+              <p>Founded to bridge gaps in local services, we partner with charities, health clinics and community leaders to deliver scalable programs.</p>
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/028/original/WhatsApp_Image_2025-11-20_at_3.02.43_PM.jpeg?1763647426" alt="About picture" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-top:12px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <div class="pill">Services</div>
+          <div style="font-size:14px;color:#555">Policies · Strategies · Support & Prevention</div>
+        </div>
+
+        <div class="services-grid">
+          <div class="service">
+            <h3 style="color:var(--lava-red)">Policies</h3>
+            <p>Clear, accessible policies that protect privacy, outline reporting steps and define safe conduct.</p>
+            <div class="sub-section">
+              <strong>Data & privacy:</strong>
+              <p>Procedures to handle sensitive information while keeping survivors safe and anonymous where needed.</p>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3 style="color:var(--electric-blue)">Strategies</h3>
+            <p>Prevention strategies that combine education, community outreach and evidence-based interventions.</p>
+            <div class="sub-section">
+              <strong>Training:</strong>
+              <p>Workshops for schools, workplaces and community groups.</p>
+            </div>
+          </div>
+
+          <div class="service">
+            <h3 style="color:var(--turquoise)">Support & Prevention</h3>
+            <p>On-the-ground support services, helplines, counselling referrals and safety planning for women.</p>
+            <div class="sub-section">
+              <strong>Hotline & referrals:</strong>
+              <p>Immediate contact points, partner clinics and shelter referrals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- More detailed blocks -->
+        <div style="margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div class="card">
+            <h3>Policy docs</h3>
+            <p>Upload or link your formal policy documents here. (Replace this placeholder with links or downloadable files.)</p>
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/029/original/WhatsApp_Image_2025-11-20_at_3.10.27_PM.jpeg?1763647864" alt="Policies" style="width:105%;height:250px;object-fit:cover;border-radius:10px;margin-top:12px">
+          </div>
+          <div class="card">
+            <h3>Strategy plans</h3>
+            <p>Summaries and timelines for programs, measurable goals and evaluation frameworks.</p>
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/030/original/WhatsApp_Image_2025-11-20_at_3.10.17_PM_%281%29.jpeg?1763648091" alt="Strategy" style="width:105%;height:250px;object-fit:cover;border-radius:10px;margin-top:12px">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT (Google Form embed placeholder) -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <div class="pill">Contact Us</div>
+          <div style="font-size:14px;color:#555">Send us a message</div>
+        </div>
+
+        <div class="card">
+          <h2 style="margin-top:0; color:var(--electric-blue); font-size:26px;">We’d Love to Hear From You</h2>
+<p style="margin-top:6px; font-size:16px; color:#444;">Send us a quick message using the form below. We’ll reach out as soon as possible.</p>
+
+          <!-- Example embed URL: https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true -->
+          <form class="contact-frame" style="padding:20px; background:white; height:auto; display:flex; flex-direction:column; gap:14px; border-radius:12px; box-shadow:0 10px 30px rgba(2,6,23,0.06)" onsubmit="return false;">
+  <label><strong>Name</strong><br><input type="text" placeholder="Your name" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ccc;"></label>
+  <label><strong>Email</strong><br><input type="email" placeholder="Your email" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ccc;"></label>
+  <label><strong>Message</strong><br><textarea placeholder="Your message" style="width:100%; padding:10px; height:140px; border-radius:8px; border:1px solid #ccc;"></textarea></label>
+  <button type="submit" style="padding:12px 20px; border-radius:12px; background:linear-gradient(90deg,var(--electric-blue),var(--turquoise)); color:white; font-weight:700; border:0; cursor:pointer;">Send</button>
+</form>
+
+          <p style="font-size:13px;color:#555;margin-top:12px">Alternatively, link directly to your Google Form or replace this iframe with a standard contact form.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>BrightDesign</strong> — 2025</div>
+        <div style="font-size:13px;color:#555">Mukovhe</em> Ralushai</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="scroll-indicator" aria-hidden>
+    <div class="dot"></div>
+    <div class="dot" style="width:8px;height:8px;opacity:0.75"></div>
+    <div class="dot" style="width:6px;height:6px;opacity:0.5"></div>
+  </div>
+
+</body>
+</html>
